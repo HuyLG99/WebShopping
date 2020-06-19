@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebApplication.Models.Product>
+
+@foreach (var special in Model)
+{
+    <div class="box-product">
+        <a class="image" href="@Url.Action("DetailProduct","Category",new { id=@special.Id})" title="View more"> <img src="@special.Image" alt=""><span class="new">Sale @special.Discount %</span> </a>
+        <h3 class="name"><a href="~/DetailProduct" title="">@special.Name</a></h3>
+        <p class="wrap_price"> <span class="price">@special.UnitPrice</span> </p>
+        <p class="submit">
+            <input type="button" value="Add to Cart" class="button">
+        </p>
+    </div>
+}

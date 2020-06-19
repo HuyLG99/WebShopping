@@ -1,0 +1,12 @@
+﻿@model List<WebApplication.Models.Category>
+    <ul>
+        @foreach (var cate in Model)
+        {
+            @*<li><a href="@Url.Action("Index","Category",new { cateid = cate.Namecatalo})">@cate.Namecatalo</a></li>*@
+            <li> @Html.ActionLink(cate.Namecatalo, "CateList", "Category", new { id = cate.Id }, null)</li>
+
+
+        }
+    </ul>
+
+

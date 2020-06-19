@@ -1,0 +1,121 @@
+﻿@model WebApplication.Models.Product
+@{
+    ViewBag.Title = "DetailProduct";
+}
+
+<div class="breadcrumb"> <a href="~/Home/Index">Home</a> » <a href="~/Category/Index">Clothes For Girls</a> » <a href="#">Brown Shoes for Boys</a> </div>
+<h1><span class="h1-top">Brown Shoes for Boys</span></h1>
+
+<div class="product-info">
+    <div class="left">
+        <div class="image">
+            <a href="@Model.ImageLink" title="" class="cloud-zoom" id='zoom1' rel="adjustX: 0, adjustY:0"><img src="@Model.ImageLink" title="" alt="" id="image" /></a>
+            <div class="zoom"><a id="zoomer" class="colorbox" href="~/image/ex/p1-big.jpg">+ Zoom</a></div>
+        </div>
+        <div class="image-additional">
+            <div id="carousel-p">
+                <ul class="jcarousel-skin-tfc">
+                    <li>
+                        <a href="@Model.ImageList" title="" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: 'image/ex/p1-big.jpg' "><img src="@Model.ImageList" title="" alt="" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="right">
+        <div class="description">
+            <div class="price">
+                <span id="line_s"></span>
+                <p class="wrap_price"><span class="price-old">@Model.Price</span> <span class="price-new">@Model.NewPrice</span></p>
+            </div>
+        </div>
+        <div class="desc2">
+            <span>Brand:</span> <a href="brands.html">SuperDuper</a><br>
+            <span>Product Code:</span>@Model.Id<br>
+            <span>Availability:</span> In Stock
+        </div>
+        <div class="cart">
+            <div>
+                Qty:
+                <input type="text" name="quantity" size="2" value="1">
+                &nbsp;
+                <input type="button" value="Add to Cart" id="button-cart" class="button">
+                <span>&nbsp;&nbsp;- OR -&nbsp;&nbsp;</span> <span class="links">
+                    <a>Add to Wish List</a><br>
+                    <a>Add to Compare</a>
+                </span>
+            </div>
+        </div>
+        <div class="review">
+            <div><img src="~/image/stars-4.png" alt="0 reviews"></div>
+            <div><a>6 reviews</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a>Write a review</a></div>
+            <div class="share"><img src="~/image/share2.png" alt=""></div>
+        </div>
+    </div>
+</div>
+
+<div id="tabs" class="htabs"><a href="#tab-description">Description</a><a href="#tab-specification">Specifications</a><a href="#tab-review">Reviews (6)</a> </div>
+<div id="tab-description" class="tab-content">
+    <div class="cpt_product_description ">
+        <div>
+            @Model.Description
+        </div>
+    </div>
+</div>
+<div id="tab-specification" class="tab-content">
+    <div class="cpt_product_description ">
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+</div>
+<div id="tab-review" class="tab-content">
+    <div id="review">
+        <div class="review-list">
+            <div class="author"><b>ssievert</b>  on  12/02/2013</div>
+            <div class="rating"><img src="~/image/stars-4.png" alt="1 reviews"></div>
+            <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+        </div>
+        <div class="pagination"><div class="results">Showing 1 to 1 of 1 (1 Pages)</div></div>
+    </div>
+    <h2 id="review-title">Write a review</h2>
+    <b>Your Name:</b><br>
+    <input type="text" name="name" value="">
+    <br>
+    <br>
+    <b>Your Review:</b>
+    <textarea name="text" cols="40" rows="8" style="width: 98%;"></textarea>
+    <span style="font-size: 11px;"><span style="color: #FF0000;">Note:</span> HTML is not translated!</span><br>
+    <br>
+    <b>Rating:</b> <span>Bad</span>&nbsp;
+    <input type="radio" name="rating" value="1">
+    &nbsp;
+    <input type="radio" name="rating" value="2">
+    &nbsp;
+    <input type="radio" name="rating" value="3">
+    &nbsp;
+    <input type="radio" name="rating" value="4">
+    &nbsp;
+    <input type="radio" name="rating" value="5">
+    &nbsp;<span>Good</span><br>
+    <br>
+    <div class="buttons">
+        <div class="right"><a id="button-review" class="button">Continue</a></div>
+    </div>
+</div>
+  
+
+<script type="text/javascript"><!--
+$('#carousel-p ul').jcarousel({
+	vertical: false,
+	visible: 3,
+	scroll: 1
+});
+$('.colorbox').colorbox({
+		overlayClose: true,
+		opacity: 0.4,
+		rel: "colorbox"
+	});
+
+//--></script> 

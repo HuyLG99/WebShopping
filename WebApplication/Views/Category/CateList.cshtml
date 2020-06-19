@@ -1,0 +1,16 @@
+﻿@model List<WebApplication.Models.Product>
+@{
+    ViewBag.Title = "CateList";
+}
+
+<h2>CateList</h2>
+@foreach (var cat in Model)
+{
+    @Html.Raw("<div class='prod_box'>")
+    <div class="center_prod_box">
+        <div class="product_title"><a href="#">@cat.Name</a></div>
+        <div class="product_img"><a href="#"><img src="@cat.ImageLink" alt=# width="40%" height="60%" border="0"></a></div>
+        <div class="prod_price"><span class="price">@cat.Price VND</span></div>
+    </div>
+    <div class="prod_details_tab"> <a href="@Url.Action("AddItem","GioHang",new { idSanpham = cat.Id , soLuong = 1})" class="prod_buy">Add to Cart</a> <a href="@Url.Action("DetailPro","Product2",new {Pro1 = cat.Id })" class="prod_details">Details</a> </div>
+    @Html.Raw("</div>")

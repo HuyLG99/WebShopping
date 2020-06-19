@@ -1,0 +1,11 @@
+﻿@model List<WebApplication.Models.Category>
+    <ul>
+        @foreach (var cate in Model)
+        {
+            <li><a href="@Url.Action("Index","Category",new { cateid = cate.Namecatalo})">@cate.Namecatalo</a></li>
+            @*<li><a href="@Url.Action("DetailProduct","Category",new { cateid=cate.ParentID})">@cate.ParentID</a></li>*@
+            @*<li> @Html.ActionLink(cate.Namecatalo, "Index", "Category", new { id = cate.Id }, null)</li>*@
+
+        }
+    </ul>
+

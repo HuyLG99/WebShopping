@@ -1,0 +1,75 @@
+﻿@using WebApplication.Models;
+@model List<WebApplication.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    List<Product> Product = ViewBag.Product;
+}
+
+
+<div class="breadcrumb"> &nbsp;<a href="~/Home/Index">Home&nbsp;</a> » &nbsp;<a href="#">Clothes For Girls&nbsp;</a> </div>
+<h1><span class="h1-top">Clothes For Girls</span></h1>
+@*<div class="category-info">
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ulla. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+    </div>*@
+<div class="product-filter">
+    <div class="display">
+        <label>Display:</label>
+        <p><span id="list" class="list_on"></span> <span id="grid" onclick="display('grid');"></span></p>
+    </div>
+    <div class="sort">
+        <label>Sort By:</label>
+        <select class="selectBox">
+            <option value="1" selected="selected">Default</option>
+            <option value="2">Name (A - Z)</option>
+            <option value="3">Name (Z - A)</option>
+            <option value="4">Price (Low &gt; High)</option>
+            <option value="5">Price (High &gt; Low)</option>
+            <option value="6">Rating (Highest)</option>
+            <option value="7">Rating (Lowest)</option>
+            <option value="8">Model (A - Z)</option>
+            <option value="9">Model (Z - A)</option>
+        </select>
+    </div>
+    <div class="limit">
+        <label>Show:</label>
+        <select class="selectBox">
+            <option value="1" selected="selected">15</option>
+            <option value="2">25</option>
+            <option value="3">50</option>
+            <option value="4">75</option>
+            <option value="5">100</option>
+        </select>
+    </div>
+</div>
+<div class="product-compare"><a href="#" id="compare-total">Product Compare (0)</a></div>
+<div class="product-list">
+
+    @foreach (var c in Product)
+    {
+        @Html.Raw("<div class='box - product'>")
+        @*<div class="box-product">*@
+
+        <span class="new">Sale @c.Discount%</span> <a class="image" href="@Url.Action("DetailProduct","Category",new { id=@c.Id})" title="View more"> <img src="@c.ImageLink" width="220" height="220" alt=""> <span class="new2">Sale @c.Discount%</span> </a>
+
+        <div class="list_grid_right">
+            <h3 class="name"><a href="@Url.Action("DetailProduct","Category",new { id=@c.Id})" title="">@c.Name</a></h3>
+            <p class="wrap_price"> <span class="price-old">@c.Price</span> <span class="price-new">@c.NewPrice</span></p>
+            <p class="description">@c.Description</p>
+            <p class="submit">
+                <input type="button" value="Add to Cart" class="button">
+            </p>
+            <p class="links_add"> <a>Add to Wish List</a> <a>Add to Compare</a> </p>
+            @*@Html.Raw("</div>")*@
+            @*@Html.Raw("<div class='box - product'>")*@
+        </div>
+        @*@Html.Raw("</div>")*@
+    @*</div>*@
+
+    }
+
+</div>
+<div class="pagination">
+    <div class="results">Showing 1 to 4 of 4 (1 Pages)</div>
+</div>
+

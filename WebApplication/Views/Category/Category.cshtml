@@ -1,0 +1,16 @@
+﻿@model  IEnumerable<WebApplication.Models.Product>
+@{
+    ViewBag.Title = "Category";
+}
+@foreach (var c in Model)
+{
+    <li class="menu_item down">
+        <a href="~/Category?categoryID=@c.Id">Clothes For Girls</a>
+        <div class="sub_menu" style="">
+            <div class="bubble"></div>
+            <div class="sub_menu_block" style="width:326px">
+                @Html.Action("loadCategory", "Home")
+            </div>
+        </div>
+    </li>
+}

@@ -1,0 +1,47 @@
+﻿
+@model IEnumerable<WebApplication.Models.Product>
+@foreach (var sale in Model)
+{
+
+    <div class="box-product">
+        <a class="image" href="@Url.Action("DetailProduct","Category",new { id=@sale.Id})" title="View more"> <img src="@sale.ImageLink"  alt=""><span class="new">Sale @sale.Discount %</span> </a>
+
+        <h3 class="name"><a href="@Url.Action("DetailProduct","Category",new { id=1})" title="">@sale.Name</a></h3>
+        <p class="wrap_price"> <span class="price-old">@sale.Price</span> <span class="price-new">@sale.Price</span></p>
+        <p class="submit">
+            <input type="button" value="Add to Cart" class="button">
+        </p>
+    </div>
+}
+@*<div class="box-product">
+        <a class="image" href="~/DetailProduct" title="View more"> <img src="~/image/ex/pro-2.png" alt=""> </a>
+        <h3 class="name"><a href="~/DetailProduct" title="">Lorem ipsum dolor sit</a></h3>
+        <p class="wrap_price"> <span class="price">$120.68</span> </p>
+        <p class="submit">
+            <input type="button" value="Add to Cart" class="button">
+        </p>
+    </div>
+    <div class="box-product">
+        <a class="image" href="~/DetailProduct" title="View more"> <img src="~/image/ex/pro-3.png" alt=""> </a>
+        <h3 class="name"><a href="~/DetailProduct" title="">Lorem ipsum dolor sit</a></h3>
+        <p class="wrap_price"> <span class="price-old">$119.50</span> <span class="price-new">$107.75</span> </p>
+        <p class="submit">
+            <input type="button" value="Add to Cart" class="button">
+        </p>
+    </div>
+    <div class="box-product">
+        <a class="image" href="~/DetailProduct" title="View more"> <img src="~/image/ex/pro-4.png" alt=""> </a>
+        <h3 class="name"><a href="~/DetailProduct" title="">Lorem ipsum dolor sit</a></h3>
+        <p class="wrap_price"> <span class="price">$236.99</span> </p>
+        <p class="submit">
+            <input type="button" value="Add to Cart" class="button">
+        </p>
+    </div>
+    <div class="box-product last-item">
+        <a class="image" href="~/DetailProduct" title="View more"> <img src="~/image/ex/pro-5.png" alt=""> </a>
+        <h3 class="name"><a href="~/DetailProduct" title="">Lorem ipsum dolor sit</a></h3>
+        <p class="wrap_price"> <span class="price">$1,177.00</span> </p>
+        <p class="submit">
+            <input type="button" value="Add to Cart" class="button">
+        </p>
+    </div>*@
